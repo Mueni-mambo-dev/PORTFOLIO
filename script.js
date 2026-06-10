@@ -1,12 +1,9 @@
-/* ========================================
-   PROFESSIONAL PORTFOLIO - VIRGINIAH MUENI
-   Interactive JavaScript
-   ======================================== */
+
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========== PRELOADER ==========
+    
     const preloader = document.getElementById('preloader');
     if (preloader) {
         window.addEventListener('load', () => {
@@ -16,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== MOBILE MENU TOGGLE ==========
+   
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
     
@@ -30,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when clicking a link
+        
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -42,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== ACTIVE NAVIGATION ON SCROLL ==========
+    
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('.nav-link');
     
@@ -68,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav();
     
-    // ========== BACK TO TOP BUTTON ==========
+    
     const backToTop = document.getElementById('backToTop');
     
     window.addEventListener('scroll', () => {
@@ -90,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ========== STATS COUNTER ANIMATION ==========
     const statNumbers = document.querySelectorAll('.stat-number');
     let animated = false;
     
@@ -126,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateStats);
     animateStats();
     
-    // ========== PROJECT FILTERING ==========
+  
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projects = document.querySelectorAll('.project-card');
     
@@ -156,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========== CONTACT FORM SUBMISSION ==========
+   
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
     
@@ -169,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const subject = document.getElementById('subject')?.value.trim();
             const message = document.getElementById('message')?.value.trim();
             
-            // Simple validation
             if (!name || !email || !message) {
                 showFormStatus('Please fill in all required fields.', 'error');
                 return;
@@ -180,14 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate form submission (in real scenario, send to backend)
+            
             showFormStatus('Sending message...', 'success');
             
             setTimeout(() => {
                 showFormStatus('Thank you! I will get back to you within 48 hours.', 'success');
                 contactForm.reset();
                 
-                // Clear success message after 5 seconds
+                
                 setTimeout(() => {
                     if (formStatus) formStatus.innerHTML = '';
                 }, 5000);
@@ -213,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ========== SMOOTH SCROLL FOR ALL ANCHOR LINKS ==========
+   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -230,10 +225,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========== TYPING ANIMATION FOR HERO (Optional) ==========
+    
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle && heroTitle.textContent === 'Informatics Specialist | Data Analyst | Systems Architect') {
-        // Original text is static, but we can add a subtle fade effect
+       
         heroTitle.style.opacity = '0';
         heroTitle.style.transform = 'translateY(10px)';
         setTimeout(() => {
@@ -243,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // ========== ADD SCROLL REVEAL EFFECT ==========
+  
     const revealElements = document.querySelectorAll('.skill-card, .project-card, .resume-item, .info-card');
     
     function checkReveal() {
@@ -268,19 +263,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', checkReveal);
     checkReveal();
-    
-    // ========== DOWNLOAD CV BUTTON (Simulated) ==========
+  
     const downloadBtn = document.querySelector('.resume-download .btn');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            // In production, replace with actual PDF URL
+           
             alert('PDF download would start here. In production, link to your actual CV file.');
-            // window.location.href = 'path/to/your-cv.pdf';
+            
         });
     }
     
-    // ========== PROJECT LINK HANDLERS ==========
     const projectLinks = document.querySelectorAll('.project-link');
     projectLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -289,7 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========== SOCIAL LINK HANDLERS ==========
     const socialLinks = document.querySelectorAll('.footer-social a, .info-card a');
     socialLinks.forEach(link => {
         link.addEventListener('click', function(e) {
